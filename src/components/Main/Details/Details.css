@@ -1,0 +1,12 @@
+.details{
+    border-left: 2px solid dimgray;
+}
+.details-head{
+    width: 30%;
+    margin: auto;
+    border-bottom: 1px solid lightgray;
+}
+.meal-name{
+    text-align: start;
+    margin-left: 5px;
+}
