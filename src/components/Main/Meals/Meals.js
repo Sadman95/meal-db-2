@@ -15,12 +15,20 @@ const Meals = () => {
         })
     }, [])
   
-    console.log(meals)
+    // console.log(meals)
     const displayMeals = (event) => {
         const searchedText = event.target.value;
         const matchedMeals = meals.filter(meal => meal.strMeal.toLowerCase().includes(searchedText.toLowerCase()))
         // console.log(matchedMeals);
         setSearched(matchedMeals);
+    }
+
+    const [mealinfo, setMealinfo] = useState([]);
+
+    const showDetails = (mealInfo) => {
+        const addedMeal = [...mealinfo,mealInfo];
+        setMealinfo(addedMeal)
+        console.log(addedMeal)
     }
     return (
         <>
@@ -37,10 +45,15 @@ const Meals = () => {
                         console.log(searched)
                     } */}
                     {
-                        searched.map(meal => <Meal key={meal.idMeal} meal={meal}></Meal>)
+                        searched.map(meal => <Meal showDetails={showDetails} key={meal.idMeal} meal={meal}></Meal>)
                     }
                 </div>
-                <Details meals={meals}></Details>
+                <div>
+                    <h5>Details</h5>
+                    {
+                        mealinfo.map(detail => <Details details={detail}></Details>)
+                    }
+                </div>
             </div>
         </>
     );

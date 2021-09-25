@@ -1,14 +1,11 @@
 import React from 'react';
 import './Meal.css'
 const Meal = (props) => {
-    console.log(props)
+    // console.log(props)
     const {meal} = props;
+    console.log(props);
     const {strMealThumb, strMeal, strInstructions, strArea} = meal;
-
-    // button e click korle console hosse kintu eita details e patabo kmne?:
-    const showDetails = (mealName) => {
-        console.log(mealName)
-    }
+    
 
     return (
         <div className="col">
@@ -20,7 +17,14 @@ const Meal = (props) => {
                 </div>
                 <div className="card-footer bg-dark d-flex justify-content-between align-items-center">
                     <small className="text-light">{strArea}</small>
-                    <button onClick={()=>showDetails(strMeal)} className="btn btn-warning">Details</button>
+                    {/* {
+                        
+                        meal.isDisplayed ? <button onClick={()=>props.showDetails(meal)} className="btn btn-warning">Details</button>:<button className="btn btn-danger">Displayed</button>
+                    } */}
+                    <div>
+                    <button onClick={()=>props.showDetails(meal)} className="btn btn-warning">Details</button>
+                    <button className="btn btn-danger">Added</button>
+                    </div>
                 </div>
             </div>
         </div>
