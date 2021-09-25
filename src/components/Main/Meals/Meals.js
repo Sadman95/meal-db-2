@@ -5,6 +5,7 @@ import './Meals.css'
 
 const Meals = () => {
     const [meals, setMeals] = useState([])
+    // console.log(meals.length)
     const [searched, setSearched] = useState([])
     useEffect(() => {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=a`)
@@ -36,6 +37,9 @@ const Meals = () => {
                 <input onChange={displayMeals} id="search-field" type="text" className="form-control" placeholder="rice" aria-label="Search field" aria-describedby="button-addon2"/>
                 <button className="btn btn-danger" type="button" id="btn-search">Search</button>
             </div>
+            <h1>Total meals: {meals.length}</h1>
+            <h2>Displayed: {mealinfo.length}</h2>
+            <h3>Remaining: {meals.length - mealinfo.length}</h3>
             <div className="display-section">
                 <div className="row row-cols-lg-2 p-2 g-4">
                     {/* {

@@ -5,7 +5,7 @@ const Details = (props) => {
     return (
         <div className="details card mb-3 bg-light">
             <p className="meal-name text-dark fw-bold">Name: {strMeal}</p>
-            <small>Visit:</small>
+            <small>view:</small>
             <a className="text-danger" href={strYoutube}>{strYoutube}</a>
         </div>
     );
